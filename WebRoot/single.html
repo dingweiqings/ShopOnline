@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>衣服详情</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"
+	media="all" />
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords"
+	content="Fashion Mania Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript">
+			addEventListener("load", function() {
+				setTimeout(hideURLbar, 0);
+			}, false);
+
+			function hideURLbar() {
+				window.scrollTo(0, 1);
+			}
+		</script>
+<!---->
+<style>
+.pinglun {
+	position: relative;
+	width: 1021px;
+	height: 30px;
+}
+
+.pinglunxiangqing {
+	position: absolute;
+	width: 700px;
+	height: 40px;
+}
+
+.pinglunren {
+	position: absolute;
+	left: 930px;
+	top: 10px;
+}
+
+.pinglunshijian {
+	position: absolute;
+	left: 1050px;
+	top: 10px;
+}
+
+#bookresultbg {
+	position: absolute;
+	height: 700px;
+	width: 1349px;
+	background-color: #262626;
+	opacity: 0.9;
+	display: none;
+	top: 0px;
+	left: 0px;
+}
+
+#bookresult {
+	position: absolute;
+	height: 700px;
+	width: 1349px;
+	/*background-color: #262626;*/
+	/*opacity: 0.5;*/
+	z-index: 9900;
+	display: none;
+	top: 0px;
+	left: 0px;
+}
+
+font,p {
+	font-family: "Hiragino Sans GB", "华文细黑", "STHeiti", "微软雅黑",
+		"Microsoft YaHei", SimHei, "Helvetica Neue", Helvetica, Arial,
+		sans-serif !important;
+}
+
+#bookresulttitle {
+	position: fixed;
+	height: 42px;
+	width: 400px;
+	top: 208px;
+	left: 474.5px;
+	background-color: #52D0C4;
+}
+
+#truetip,#falsetip {
+	position: fixed;
+	height: 355px;
+	width: 400px;
+	left: 474.5px;
+	top: 250px;
+	background-color: white;
+	margin: 0px, auto;
+	display: none;
+	background-color: white;
+}
+
+#truetipdetail,#falsetipdetail {
+	position: absolute;
+	height: 305px;
+	width: 355px;
+	left: 22.5px;
+	top: 25px;
+}
+</style>
+<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+</head>
+
+<body>
+	<!--header-->
+<div class="header">
+	<div class="header-top">
+		<div class="container">
+		<div style="top:0px;" class="col-md-4 world">
+					<a href="index.html"><img style=" height: 62px;"
+						src="images/wel.jpg" alt=""> </a>
+				</div>
+				<div class="col-sm-4 logo">
+					<a href="index.html"><img src="images/logo.png" alt=""></a>	
+				</div>
+		
+			<div class="col-sm-4 header-left">	
+			        <div id="islogin">
+					<p class="log"><a href="account.html"  >登陆</a>
+						<span>or</span><a  href="register.html"  >注册</a></p>
+					</div>	
+					<div class="cart box_1">
+						<a href="checkout.html">
+						<h3> <div class="total">
+							<!-- <span class="simpleCart_total"></span> --></div>
+							<img src="images/cart.png" alt=""/></h3>
+						</a>
+						
+
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+				<div class="clearfix"> </div>
+		</div>
+		</div>
+		<div class="container">
+			<div class="head-top">
+				<div class="col-sm-2 number">
+					<span><i class="glyphicon glyphicon-phone"></i>085 596 234</span>
+				</div>
+		 <div class="col-sm-8 h_menu4">
+				<ul class="memenu skyblue">
+					  <li class=" grid"><a  href="index.html">首页展示</a></li>	
+				      <li><a  href="products.html">分类搜索</a>
+				      <!-- 	<div class="mepanel">
+						<div class="row">
+							<div class="col1">
+								<div class="h_nav">
+									<h4>All Clothing</h4>
+									<ul>
+										<li><a href="products.html">Shirts</a></li>
+										<li><a href="products.html">Sports Wear</a></li>
+										<li><a href="products.html">Shorts</a></li>
+										<li><a href="products.html">Suits & Blazers</a></li>
+										<li><a href="products.html">Formal Shirts</a></li>
+										<li><a href="products.html">Sweatpants</a></li>
+										<li><a href="products.html">Swimwear</a></li>
+										<li><a href="products.html">Trousers & Chinos</a></li>
+										<li><a href="products.html">T-Shirts</a></li>
+										<li><a href="products.html">Underwear & Socks</a></li>
+										
+									</ul>	
+								</div>							
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Footwear</h4>
+									<ul>
+										<li><a href="products.html">Formal Shoes</a></li>
+										<li><a href="products.html">Boots</a></li>
+										<li><a href="products.html">Sports Shoes</a></li>
+										<li><a href="products.html">Casual Shoes</a></li>
+										<li><a href="products.html">Running Shoes</a></li>
+										<li><a href="products.html">Sneakers</a></li>
+										<li><a href="products.html">Loafers</a></li>
+										<li><a href="products.html">Slippers</a></li>
+										<li><a href="products.html">Sandals</a></li>
+										<li><a href="products.html">Flip-flops</a></li>
+									
+									</ul>	
+								</div>							
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>												
+							</div>
+						  </div>
+						</div>
+					 -->
+					</li>
+				    <li class="grid"><a  href="#">活动详情</a>
+					  <!-- 	<div class="mepanel">
+						<div class="row">
+							<div class="col1">
+								<div class="h_nav">
+									<h4>All Clothing</h4>
+									<ul>
+										<li><a href="products.html">Shirts & Tops</a></li>
+										<li><a href="products.html">Sports Wear</a></li>
+										<li><a href="products.html">Kurtas & Kurties</a></li>
+										<li><a href="products.html">Suits & Blazers</a></li>
+										<li><a href="products.html">Sarees</a></li>
+										<li><a href="products.html">Sweatpants</a></li>
+										<li><a href="products.html">Swimwear</a></li>
+										<li><a href="products.html">Night-Suits</a></li>
+										<li><a href="products.html">T-Shirts</a></li>
+										<li><a href="products.html">Jeans</a></li>
+										
+									</ul>	
+								</div>							
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Footwear</h4>
+									<ul>
+										<li><a href="products.html">Heels</a></li>
+										<li><a href="products.html">Flats</a></li>
+										<li><a href="products.html">Sports Shoes</a></li>
+										<li><a href="products.html">Casual Shoes</a></li>
+										<li><a href="products.html">Running Shoes</a></li>
+										<li><a href="products.html">Wedges</a></li>
+										<li><a href="products.html">Boots</a></li>
+										<li><a href="products.html">Pumps</a></li>
+										<li><a href="products.html">Slippers</a></li>
+										<li><a href="products.html">Flip-flops</a></li>
+									
+									</ul>
+								</div>							
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>												
+							</div>
+						  </div>
+						</div>
+			    -->
+			    </li>
+				<li><a  href="user.html">个人中心</a></li>				
+			  </ul> 
+			</div>
+				<div class="col-sm-2 search">		
+			<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a>
+		</div>
+		<div class="clearfix"> </div>
+<!--//header-->
+
+	<!---->
+	<div class="single">
+
+		<div class="container">
+			<div class="col-md-9">
+				<div class="col-md-5 grid">
+					<div class="flexslider">
+						<ul class="slides">
+							<li id="lipic1" data-thumb="img/pic1_1.jpg">
+								<div class="thumb-image">
+									<img id="pic1" style="height: 443px;width: 306px;" src=""
+										data-imagezoom="true" class="img-responsive">
+								</div></li>
+							<li id="lipic2" data-thumb="img/pic1_2.jpg">
+								<div class="thumb-image">
+									<img id="pic2" style="height: 443px;width: 306px;" src=""
+										data-imagezoom="true" class="img-responsive">
+								</div></li>
+							<li id="lipic3" data-thumb="img/pic1_3.jpg">
+								<div class="thumb-image">
+									<img id="pic3" style="height: 443px;width: 306px;" src=""
+										data-imagezoom="true" class="img-responsive">
+								</div></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-7 single-top-in">
+					<div class="single-para simpleCart_shelfItem">
+						<h1 id="clothname">Lorem ipsum dolor sit amet, consectetur
+							adipisicing elit</h1>
+						<p id="clothdetail">Contrary to popular belief, Lorem Ipsum is
+							not simply random text. It has roots in a piece of classical
+							Latin literature from 45 BC, making it over 2000 years old.It has
+							roots in a piece of classical Latin literature from 45 BC, making
+							it over 2000 years old.</p>
+						<div class="star-on">
+							<ul id="zongpingjiaxingxing">
+								<li><a href="#zongpinglun"><i
+										class="glyphicon glyphicon-star"> </i> </a></li>
+								<li><a href="#zongpinglun"><i
+										class="glyphicon glyphicon-star"> </i> </a></li>
+								<li><a href="#zongpinglun"><i
+										class="glyphicon glyphicon-star"> </i> </a></li>
+								<li><a href="#zongpinglun"><i
+										class="glyphicon glyphicon-star"> </i> </a></li>
+								<li><a href="#zongpinglun"><i
+										class="glyphicon glyphicon-star"> </i> </a></li>
+							</ul>
+							<div class="review">
+								<a href="#zongpinglun" id="pinglunshu"> 3 条评论 </a>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+
+						<label id="clothprice" class="add-to item_price">￥32.8</label>
+
+						<div class="available">
+							<h6>参数选择 :</h6>
+							<ul>
+
+								<li>尺码: <select id="chima">
+										<option value="1">S/8</option>
+										<option value="2">M/10</option>
+										<option value="3">L/12</option>
+								</select></li>
+								<li>数量: <input id="shuliang" type="number"
+									style=" ime-mode:Disabled;width: 93px;height: 28px;" min="1"
+									max="5"  maxLength="5"
+									  onKeypress="if(event.keyCode<48||event.keyCode>54)event.returnValue=false;"
+									value="1" /></li>
+							</ul>
+						</div>
+						<!-- -->
+						<a id="jiarugouwuche" class="to-buy">加入购物车</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a class="cart item_add" id="lijigoumai">&nbsp;&nbsp;立即购买&nbsp;&nbsp;</a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+
+				<script type="text/javascript">
+					var clothtype;
+
+					function getQueryString(name) {
+						var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)",
+								"i");
+						var r = window.location.search.substr(1).match(reg);
+						if (r != null)
+							return unescape(r[2]);
+						return null;
+					}
+
+					var clothid = getQueryString("cloid");
+					
+					var price = 0;
+
+					/* 获取衣服的信息 */
+					$.getJSON("getInfo.action", {
+						"clothid" : clothid
+					}, function(obj) {
+
+						$("#clothname").html(obj.cloname);
+						$("#clothdetail").html(obj.clodetail);
+						$("#clothprice").html("￥" + obj.cloprice);
+						clothtype = obj.clotype;
+						//alert(clothtype);
+						price = obj.cloprice;
+						alert("386 cloid "+cloid);
+						$("#pic1").attr("src", obj.clopic1);
+						$("#pic2").attr("src", obj.clopic2);
+						$("#pic3").attr("src", obj.clopic3);
+
+						$("#lipic1").attr("data-thumb", obj.clopic1);
+						$("#lipic2").attr("data-thumb", obj.clopic2);
+						$("#lipic3").attr("data-thumb", obj.clopic3);
+
+						/* alert($("#lipic2").attr("data-thumb"));
+						alert($("#lipic1").attr("data-thumb"));
+						alert($("#lipic3").attr("data-thumb")); */
+					});
+				</script>
+
+
+
+
+				<!--pinglun-->
+				<div id="zongpinglun">
+					<hr style="color: black;" />
+					<h2 style="color: #52D0C4;">&nbsp;&nbsp;&nbsp;&nbsp;用户评论</h2>
+					<hr />
+					<div class="footer-top" style="top: 0px; ">
+
+						<div class="pinglun">
+
+							<div class="pinglunxiangqing">
+								<font id="pinglunxiangqing1">衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。</font>
+							</div>
+							<div class="star-on" style="position: absolute;left: 800px;">
+								<ul id="xingxingshu1">
+									<li><a href="#"><i class="glyphicon glyphicon-star">
+										</i> </a></li>
+								</ul>
+							</div>
+							<div class="pinglunren">
+								<font id="pinglunren1" style="width:20px ;">assssss</font>
+							</div>
+							<div class="pinglunshijian">
+								<font id="pinglunshijian1" style="width:20px ;">2016/12/12</font>
+							</div>
+
+
+						</div>
+
+						<hr />
+
+
+						<div class="pinglun">
+
+							<div class="pinglunxiangqing">
+								<font id="pinglunxiangqing2">衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。</font>
+							</div>
+							<div class="star-on" style="position: absolute;left: 800px;">
+								<ul id="xingxingshu2">
+									<li><a href="#"><i class="glyphicon glyphicon-star">
+										</i> </a></li>
+								</ul>
+							</div>
+							<div class="pinglunren">
+								<font id="pinglunren2" style="width:20px ;">assssss</font>
+							</div>
+							<div class="pinglunshijian">
+								<font id="pinglunshijian2" style="width:20px ;">2016/12/12</font>
+							</div>
+
+
+						</div>
+
+						<hr />
+
+						<div class="pinglun">
+
+							<div class="pinglunxiangqing">
+								<font id="pinglunxiangqing3">衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。</font>
+							</div>
+							<div class="star-on" style="position: absolute;left: 800px;">
+								<ul id="xingxingshu3">
+									<li><a href="#"><i class="glyphicon glyphicon-star">
+										</i> </a></li>
+								</ul>
+							</div>
+							<div class="pinglunren">
+								<font id="pinglunren3" style="width:20px ;">assssss</font>
+							</div>
+							<div class="pinglunshijian">
+								<font id="pinglunshijian3" style="width:20px ;">2016/12/12</font>
+							</div>
+
+
+						</div>
+
+						<hr />
+
+						<div class="pinglun">
+
+							<div class="pinglunxiangqing">
+								<font id="pinglunxiangqing4">衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。</font>
+							</div>
+							<div class="star-on" style="position: absolute;left: 800px;">
+								<ul id="xingxingshu4">
+									<li><a href="#"><i class="glyphicon glyphicon-star">
+										</i> </a></li>
+								</ul>
+							</div>
+							<div class="pinglunren">
+								<font id="pinglunren4" style="width:20px ;">assssss</font>
+							</div>
+							<div class="pinglunshijian">
+								<font id="pinglunshijian4" style="width:20px ;">2016/12/12</font>
+							</div>
+
+
+						</div>
+
+						<hr />
+
+						<div class="pinglun">
+
+							<div class="pinglunxiangqing">
+								<font id="pinglunxiangqing5">衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。衣服很好看。。。</font>
+							</div>
+							<div class="star-on" style="position: absolute;left: 800px;">
+								<ul id="xingxingshu5">
+									<li><a href="#"><i class="glyphicon glyphicon-star">
+										</i> </a></li>
+									<li><a href="#"><i class="glyphicon glyphicon-star">
+										</i> </a></li>
+									<li><a href="#"><i class="glyphicon glyphicon-star">
+										</i> </a></li>
+									<li><a href="#"><i class="glyphicon glyphicon-star">
+										</i> </a></li>
+									<li><a href="#"><i class="glyphicon glyphicon-star">
+										</i> </a></li>
+								</ul>
+							</div>
+							<div class="pinglunren">
+								<font id="pinglunren5" style="width:20px ;">assssss</font>
+							</div>
+							<div class="pinglunshijian">
+								<font id="pinglunshijian5" style="width:20px ;">2016/12/12</font>
+							</div>
+
+
+						</div>
+
+						<hr />
+						<div id="fenye" style="position:absolute;left:530px;">
+							<font id="shouye">首页</font>&nbsp;&nbsp;&nbsp; <font
+								id="shangyiye">上一页</font>&nbsp;&nbsp;&nbsp; <font id="xiayiye">下一页</font>&nbsp;&nbsp;&nbsp;
+							<font id="moye">末页</font>&nbsp;&nbsp;&nbsp; <font>第</font><font
+								id="dijiye">?</font><font>页</font>&nbsp;&nbsp;&nbsp;<font>共</font><font
+								id="zongyeshu">？</font><font>页</font>
+						</div>
+
+
+					</div>
+				</div>
+
+
+
+
+
+				<div class="content-top1">
+					<hr />
+					<div class="col-md-4 col-md3">
+						<div class="col-md1 simpleCart_shelfItem">
+							<a class="xinlianjie1" href="single.html"> <img id="xin1"
+								class="img-responsive" src="images/pi6.png" alt="" /> </a>
+							<h3>
+								<a class="xinlianjie1" id="xinmingcheng1" href="single.html">Jeans</a>
+							</h3>
+							<div class="price">
+								<h5 id="xinjiage1" class="item_price">￥300</h5>
+								<a href="#" class="xinlianjie1" class="item_add">查看详情</a>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-md3">
+						<div class="col-md1 simpleCart_shelfItem">
+							<a class="xinlianjie2" href="single.html"> <img id="xin2"
+								class="img-responsive" src="images/pi7.png" alt="" /> </a>
+							<h3>
+								<a class="xinlianjie2" id="xinmingcheng2" href="single.html">Tops</a>
+							</h3>
+							<div class="price">
+								<h5 id="xinjiage2" class="item_price">￥300</h5>
+								<a href="#" class="xinlianjie2" class="item_add">查看详情</a>
+								<div class="clearfix"></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-md-4 col-md3">
+						<div class="col-md1 simpleCart_shelfItem">
+							<a class="xinlianjie3" href="single.html"> <img id="xin3"
+								class="img-responsive" src="images/pi.png" alt="" /> </a>
+							<h3>
+								<a class="xinlianjie3" id="xinmingcheng3" href="single.html">Tops</a>
+							</h3>
+							<div class="price">
+								<h5 id="xinjiage3" class="item_price">￥300</h5>
+								<a href="#" class="xinlianjie3" class="item_add">查看详情</a>
+								<div class="clearfix"></div>
+							</div>
+
+						</div>
+					</div>
+
+
+
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				/* function getQueryString(name) {
+				 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)",
+				 "i");
+				 var r = window.location.search.substr(1).match(reg);
+				 if (r != null)
+				 return unescape(r[2]);
+				 return null;
+				 }
+
+				 var clothid = getQueryString("clothid"); */
+				/* 获取新上架商品推荐------最新上架商品*/
+
+				$.getJSON("getNew.action", {
+					"clothid" : clothid
+				}, function(obj) {
+					//alert(obj[1].cloprice);
+					//alert(obj.lenght);
+					for ( var i = 1; i <= 4; i++) {
+
+						$("#xin" + i).attr("src", obj[i - 1].clopic1);
+						$("#xinmingcheng" + i).html(obj[i - 1].cloname);
+						$("#xinjiage" + i).html("￥" + obj[i - 1].cloprice);
+						$(".xinlianjie" + i).attr("href",
+								"single.html?clothid=" + obj[i - 1].cloid);
+					}
+
+				});
+			</script>
+
+			<!----->
+			<div class="col-md-3 product-bottom">
+				<!--initiate accordion-->
+				<script type="text/javascript">
+					$(function() {
+						var menu_ul = $('.menu-drop > li > ul'), menu_a = $('.menu-drop > li > a');
+						menu_ul.hide();
+						menu_a.click(function(e) {
+							e.preventDefault();
+							if (!$(this).hasClass('active')) {
+								menu_a.removeClass('active');
+								menu_ul.filter(':visible').slideUp('normal');
+								$(this).addClass('active').next().stop(true,
+										true).slideDown('normal');
+							} else {
+								$(this).removeClass('active');
+								$(this).next().stop(true, true).slideUp(
+										'normal');
+							}
+						});
+
+					});
+				</script>
+
+
+
+
+				<!--//menu-->
+				<!--seller-->
+				<div class="product-bottom">
+
+					<h3 class="cate">掌柜推荐</h3>
+					<div class="product-go">
+						<div class=" fashion-grid">
+							<a class="remenlianjie1" href="single.html"><img id="remen1"
+								class="img-responsive " src="images/pr.jpg" alt=""> </a>
+						</div>
+						<div class=" fashion-grid1">
+							<h6 class="best2">
+								<a class="remenlianjie1" id="remenmingcheng1" href="single.html">Lorem
+									ipsum dolor sitamet consectetuer </a>
+							</h6>
+							<span id="remenjiage1" class=" price-in1"> ￥40.00</span>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<br />
+					<div class="product-go">
+						<div class=" fashion-grid">
+							<a class="remenlianjie2" href="single.html"><img id="remen2"
+								class="img-responsive " src="images/pr1.jpg" alt=""> </a>
+						</div>
+						<div class=" fashion-grid1">
+							<h6 class="best2">
+								<a class="remenlianjie2" id="remenmingcheng2" href="single.html">Lorem
+									ipsum dolor sitamet consectetuer </a>
+							</h6>
+							<span id="remenjiage2" class=" price-in1"> ￥40.00</span>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<br />
+					<div class="product-go">
+						<div class=" fashion-grid">
+							<a class="remenlianjie3" href="single.html"><img id="remen3"
+								class="img-responsive " src="images/pr2.jpg" alt=""> </a>
+						</div>
+						<div class=" fashion-grid1">
+							<h6 class="best2">
+								<a class="remenlianjie3" id="remenmingcheng3" href="single.html">Lorem
+									ipsum dolor sitamet consectetuer </a>
+							</h6>
+							<span id="remenjiage3" class=" price-in1"> ￥40.00</span>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<br />
+					<div class="product-go">
+						<div class=" fashion-grid">
+							<a class="remenlianjie4" href="single.html"><img id="remen4"
+								class="img-responsive " src="images/pr3.jpg" alt=""> </a>
+						</div>
+						<div class=" fashion-grid1">
+							<h6 class="best2">
+								<a class="remenlianjie4" id="remenmingcheng4" href="single.html">Lorem
+									ipsum dolor sitamet consectetuer </a>
+							</h6>
+							<span id="remenjiage4" class=" price-in1"> ￥40.00</span>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+
+				<script type="text/javascript">
+					/* function getQueryString(name) {
+						var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)",
+								"i");
+						var r = window.location.search.substr(1).match(reg);
+						if (r != null)
+							return unescape(r[2]);
+						return null;
+					}
+
+					var clothid = getQueryString("clothid"); */
+					/* 获取掌柜推荐商品------销量最佳商品*/
+					$.getJSON("getBest.action", {
+						"clothid" : clothid
+					}, function(obj) {
+						//alert(obj[1].cloprice);
+						//alert(obj.lenght);
+						for ( var i = 1; i <= 4; i++) {
+
+							$("#remen" + i).attr("src", obj[i - 1].clopic1);
+							$("#remenmingcheng" + i).html(obj[i - 1].cloname);
+							$("#remenjiage" + i)
+									.html("￥" + obj[i - 1].cloprice);
+							$(".remenlianjie" + i).attr("href",
+									"single.html?cloid=" + obj[i - 1].cloid);
+						}
+
+					});
+				</script>
+
+
+
+
+
+
+
+				<!--//seller-->
+				<div style="position: absolute; top:1110px;" class="tag">
+
+					<h3 class="cate">你可能也喜欢</h3>
+					<div class="tags">
+						<div class="product-go">
+							<div class=" fashion-grid">
+								<a class="xiangsilianjie1" href="single.html"><img
+									id="xiangsi1" class="img-responsive " src="images/pr.jpg"
+									alt=""> </a>
+							</div>
+							<div class=" fashion-grid1">
+								<h6 class="best2">
+									<a class="xiangsilianjie1" id="xiangsimingcheng1"
+										href="single.html">Lorem ipsum dolor sitamet consectetuer
+									</a>
+								</h6>
+								<span id="xiangsijiage1" class=" price-in1"> ￥40.00</span>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+
+						<div class="tags">
+							<div class="product-go">
+								<div class=" fashion-grid">
+									<a class="xiangsilianjie2" href="single.html"><img
+										id="xiangsi2" class="img-responsive " src="images/pr.jpg"
+										alt=""> </a>
+								</div>
+								<div class=" fashion-grid1">
+									<h6 class="best2">
+										<a class="xiangsilianjie2" id="xiangsimingcheng2"
+											href="single.html">Lorem ipsum dolor sitamet consectetuer
+										</a>
+									</h6>
+									<span id="xiangsijiage2" class=" price-in1"> ￥40.00</span>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<br />
+							<div class="product-go">
+								<div class=" fashion-grid">
+									<a class="xiangsilianjie3" href="single.html"><img
+										id="xiangsi3" class="img-responsive " src="images/pr3.jpg"
+										alt=""> </a>
+								</div>
+								<div class=" fashion-grid1">
+									<h6 class="best2">
+										<a class="xiangsilianjie3" id="xiangsimingcheng3"
+											href="single.html">Lorem ipsum dolor sitamet consectetuer
+										</a>
+									</h6>
+									<span id="xiangsijiage3" class=" price-in1"> $40.00</span>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+		<script type="text/javascript">
+			/* function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if (r != null)
+					return unescape(r[2]);
+				return null;
+			}
+
+			var clothid = getQueryString("clothid"); */
+
+			/*你可能喜欢---根据商品的类型来进行商品推荐*/
+			$.getJSON("getSimilar.action", {
+				"clothid" : clothid
+			}, function(obj) {
+				//alert(obj[1].cloprice);
+				//alert(obj.lenght);
+				for ( var i = 1; i <= 3; i++) {
+
+					$("#xiangsi" + i).attr("src", obj[i - 1].clopic1);
+					$("#xiangsimingcheng" + i).html(obj[i - 1].cloname);
+					$("#xiangsijiage" + i).html("￥" + obj[i - 1].cloprice);
+					$(".xiangsilianjie" + i).attr("href",
+							"single.html?clothid=" + obj[i - 1].cloid);
+				}
+
+			});
+		</script>
+
+
+		<!--footer-->
+		<div class="footer">
+
+
+			<div class="footer-bottom">
+				<div class="container">
+					<p style="font-size: 20px;color: #52D0C4;" class="footer-class"></p>
+					<p class="footer-class"></p>
+					<div class="clearfix"></div>
+					<p class="footer-class">
+						Copyright &copy; 2016.Company name All rights reserved. <a
+							target="_blank" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- slide -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/imagezoom.js"></script>
+		<!-- start menu -->
+		<link href="css/memenu.css" rel="stylesheet" type="text/css"
+			media="all" />
+		<script type="text/javascript" src="js/memenu.js"></script>
+		<script>
+			$(document).ready(function() {
+				$(".memenu").memenu();
+			});
+		</script>
+		<script src="js/simpleCart.min.js">
+			
+		</script>
+		<!--initiate accordion-->
+		<script type="text/javascript">
+			$(function() {
+				var menu_ul = $('.menu-drop > li > ul'), menu_a = $('.menu-drop > li > a');
+				menu_ul.hide();
+				menu_a.click(function(e) {
+					e.preventDefault();
+					if (!$(this).hasClass('active')) {
+						menu_a.removeClass('active');
+						menu_ul.filter(':visible').slideUp('normal');
+						$(this).addClass('active').next().stop(true, true)
+								.slideDown('normal');
+					} else {
+						$(this).removeClass('active');
+						$(this).next().stop(true, true).slideUp('normal');
+					}
+				});
+
+			});
+		</script>
+		<!-- FlexSlider -->
+		<script defer src="js/jquery.flexslider.js"></script>
+		<link rel="stylesheet" href="css/flexslider.css" type="text/css"
+			media="screen" />
+
+		<script>
+			// Can also be used with $(document).ready()
+			$(window).load(function() {
+				$('.flexslider').flexslider({
+					animation : "slide",
+					controlNav : "thumbnails"
+				});
+			});
+		</script>
+		<!---pop-up-box---->
+		<link href="css/popuo-box.css" rel="stylesheet" type="text/css"
+			media="all" />
+		<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+		<!---//pop-up-box---->
+		<script>
+			$(document).ready(function() {
+				$('.popup-with-zoom-anim').magnificPopup({
+					type : 'inline',
+					fixedContentPos : false,
+					fixedBgPos : true,
+					overflowY : 'auto',
+					closeBtnInside : true,
+					preloader : false,
+					midClick : true,
+					removalDelay : 300,
+					mainClass : 'my-mfp-zoom-in'
+				});
+				islogin();
+			});
+			function islogin(){
+       // alert("islogin");
+         $.post(
+         "islogin.action",
+         {},
+         function(obj){
+           if(obj!=""){
+          // alert(obj);
+             $("#islogin").html(obj+" 已登录");
+           }else{
+             location.href="account.html";
+           }
+         },
+         "text"
+         );
+      }
+		</script>
+
+
+		<script type="text/javascript">
+			/* var clothtype;
+
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if (r != null)
+					return unescape(r[2]);
+				return null;
+			}
+
+			var clothid = getQueryString("clothid"); */
+
+			/*-----------------------------------------------------------------*/
+			/*获取总评论数*/
+			$.post("gettotalcoms.action", {
+				"clothid" : clothid
+			}, function(obj) {
+				$("#pinglunshu").html(obj + "条评论");
+			}, "text");
+
+			/*-----------------------------------------------------------------*/
+			/*获取总的评论分数*/
+			$
+					.get(
+							"getavgxingxing.action",
+							{
+								"clothid" : clothid
+							},
+							function(obj) {
+								//alert(obj+",,,");
+								var m = "";
+								for ( var n = 0; n < obj; n++) {
+									m += "<li><a ><i class='glyphicon glyphicon-star'></i></a></li>";
+								}
+								if (obj != 0) {
+									$("#zongpingjiaxingxing").html(m);
+								}
+							}, "text");
+
+			/*--------------------------------------------------------------------------*/
+			/*分頁獲取衣服的評論*/
+			var pagetotalnum = 1;
+			var pagenum = 0;
+			var pagecount = 5;
+
+			function showPageTotalnum() {
+				//alert("总数函数");
+				$.get("gettotalpage.action", {
+					"clothid" : clothid,
+					"pagecount" : pagecount
+				}, function(obj) {
+					if (obj == 0) {
+						obj = 1;
+					}
+					pagetotalnum = obj;
+					//alert(obj+"aaa");
+					//alert("zongyeshu"+pagetotalnum);
+
+					$("#zongyeshu").html(pagetotalnum);
+				}, "text");
+			}
+
+			function initshow(pagecount1, pagenum1) {
+				pagecount = pagecount1;
+				pagenum = pagenum1;
+				//alert(pagecount+"  "+pagenum);
+				showPageTotalnum();
+				showByPage();
+			}
+
+			function showByPage() {
+				//showPageTotalnum();
+				$("#dijiye").html(pagenum);
+				$
+						.getJSON(
+								"getcom.action",
+								{
+									"clothid" : clothid,
+									"pagecount" : pagecount,
+									"pagenum" : pagenum
+								},
+								function(obj) {
+									// alert(obj);
+									for ( var i = 1; i <= 5; i++) {
+										//alert(obj[i-1].comdetail);
+										var s = "";
+										if (obj[i - 1] != null) {
+											$("#pinglunxiangqing" + i).html(
+													obj[i - 1].comdetail);
+
+											for ( var j = 0; j < obj[i - 1].comgrade; j++) {
+												s += "<li><a ><i class='glyphicon glyphicon-star'></i></a></li>";
+											}
+
+											$("#xingxingshu" + i).html(s);
+											$("#pinglunren" + i).html(
+													"用戶" + obj[i - 1].quserid);
+											$("#pinglunshijian" + i).html(
+													obj[i - 1].comdate);
+
+										} else {
+											$("#pinglunxiangqing" + i).html("");
+											$("#xingxingshu" + i).html("");
+											$("#pinglunren" + i).html("");
+											$("#pinglunshijian" + i).html("");
+										}
+									}
+
+								});
+
+			}
+
+			$(document).ready(function() {
+				initshow(5, 1);
+			});
+
+			$("#shouye").click(function() {
+				initshow(5, 1);
+			});
+
+			$("#moye").click(function() {
+				initshow(5, pagetotalnum);
+			});
+
+			$("#shangyiye").click(function() {
+				if (pagenum - 1 == 0) {
+					pagenum = 2;
+				}
+				initshow(5, pagenum - 1);
+			});
+
+			$("#xiayiye").click(function() {
+				if (pagenum + 1 > pagetotalnum) {
+					pagenum = pagetotalnum - 1;
+				}
+				initshow(5, pagenum + 1);
+			});
+		</script>
+
+
+
+		<div id="bookresult">
+			<div id="bookresultbg"></div>
+			<div id="bookresulttitle">
+				<div style="position: absolute;left :15px;top:7px;">
+					<font style="color:white; font-size: 18px">預定結果</font>
+				</div>
+				<div id="closetip" style="position: absolute;left:350px;top:5px;">
+					<img src="img/page055.jpg">
+				</div>
+			</div>
+			<div id="bookresultdetail">
+				<div id="truetip">
+					<div style="text-align: center;" id="truetipdetail">
+						<br /> <br />
+						<h3 style="font-size: 26px">预定成功</h3>
+						<br />
+						<h4 style="font-size: 22px">你可以在“购物车”中查询</h4>
+
+					</div>
+				</div>
+
+				<div id="falsetip">
+					<div style="text-align: center;" id="falsetipdetail">
+						<br /> <br />
+						<h4 style="font-size: 26px">预定失敗</h4>
+						<br />
+						<h5 style="font-size: 22px">商品可能库存不够了</h5>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script type="text/javascript">
+			/* var total=0; */
+
+			function addsth() {
+				var clonum = $("#shuliang").val();
+				var closize = $("#chima").val();
+
+				//alert(clothid+"  "+clonum+"  "+closize);
+				/* alert("111");
+				 alert(clothid); */
+				$.post("additem.action", {
+					"clonum" : clonum,
+					"closize" : closize,
+					"cloid" : clothid
+				}, function(obj) {
+					//alert(obj);
+
+					$("#bookresult").show();
+					if (obj == "ok") {
+
+						$("#truetip").show();
+						$("#falsetip").hide();
+
+						/* total+=clonum*price; */
+						//alert(total);
+						//$(".simpleCart_total").html("￥"+total);
+					} else if (obj == "fail") {
+						$("#falsetip").show();
+						$("#truetip").hide();
+					} else if(obj=="noLogin"){
+						$("#bookresult").hide();
+						location.href = "account.html";
+					}
+				}, "text");
+
+			}
+
+			$("#jiarugouwuche").click(function() {
+
+				addsth();
+			});
+
+			$("#closetip").click(function() {
+				$("#bookresult").hide();
+
+			});
+
+			$("#lijigoumai").click(
+
+			function() {
+				addsth();
+				location.href = "checkout.html";
+			});
+		</script>
+</body>
+
+</html>

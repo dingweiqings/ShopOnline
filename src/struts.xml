@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.i18n.encoding" value="UTF-8"/>
+<constant name="struts.action.extension" value="action,do,go"></constant>
+<constant name="struts.configuration.xml.reload" value="true"></constant>
+<constant name="struts.devMode" value="true"></constant>
+<!-- 登陆注册 -->
+<package name="demo" namespace="" extends="struts-default">
+   <!--登陆是否成功 -->
+   <action name="login" class="com.etc.controller.LoginAction" method="loginOk">
+   <result name="success">/user.html</result>
+   <result name="fail">/register.html</result>
+   </action>
+   <!--用户名是否存在  -->
+   <action name="isUser" class="com.etc.controller.LoginAction" method="isQuser">
+   </action>
+   <!--登陆成功后获取用户名  -->
+   <action name="islogin" class="com.etc.controller.LoginAction" method="isLogin">
+   </action>
+   <!--修改用户个人信息 -->
+   <action name="doupdate" class="com.etc.controller.LoginAction" method="isupdate">
+   </action>
+   <!--修改账号金额 -->
+   <action name="addMoney" class="com.etc.controller.LoginAction" method="isMoneyAdd">
+   </action>
+   <!--注册是否成功  -->
+   <action name="register" class="com.etc.controller.RegisterAction" method="registerOk">
+   <result name="success">/index.html</result>
+   <result name="fail">/register.html</result>
+   </action>
+   <!--用户名是否存在  -->
+   <action name="seluser" class="com.etc.controller.LoginAction" method="selQuser">
+   </action>
+ </package>
+ <!-- 分页显示旗袍  -->
+ <package name="demo1" namespace="/" extends="struts-default">
+ <action name="selClothsByPage" class="com.etc.controller.ClothAction" method="getCloths"></action>
+ <action name="getTotalPages" class="com.etc.controller.ClothAction" method="getPages"></action>
+  </package>
+<package name="demo2" namespace="" extends="struts-default">
+	<!-- 显示购物车的全部内容 -->
+	   <action name="seluser" class="com.etc.controller.LoginAction" method="selQuser">
+   </action>
+	<action name="jzgwc" class="com.etc.controller.GWCAction" method="doAllOrder">
+	</action>
+	<action name="scgwc" class="com.etc.controller.GWCAction" method="dodelOrder">
+	</action>
+	<action name="scdd" class="com.etc.controller.SCDDAction" method="getDingDan">
+	</action>
+	<action name="gxsl" class="com.etc.controller.GWCAction" method="updatetrolley">
+	</action>
+	<action name="tijiao" class="com.etc.controller.SCDDAction" method="tijiao">
+	</action>
+	<action name="getuser" class="com.etc.controller.SCDDAction" method="getUser">
+	</action>
+    <action name="calculteAllMoney" class="com.etc.controller.SCDDAction" method="calculteAllMoney">
+	</action>
+</package>
+
+<package name="single" namespace="/" extends="struts-default">
+<interceptors>
+<interceptor name="islogin" class="com.etc.interceptor.LoginInterceptor"></interceptor>
+</interceptors>
+
+		<!-- 单件衣服详情 -->
+		<action name="getInfo" class="com.etc.controller.SingleAction"
+			method="getInfo">
+		</action>
+
+		<action name="gettotalpage" class="com.etc.controller.SingleAction"
+			method="gettotal"></action>
+
+		<action name="getcom" class="com.etc.controller.SingleAction"
+			method="getcombypage"></action>
+
+		<action name="gettotalcoms" class="com.etc.controller.SingleAction"
+			method="gettotalcoms"></action>
+
+		<action name="getavgxingxing" class="com.etc.controller.SingleAction"
+			method="getavggrade"></action>
+			
+		<!--WJZ  -->
+		<action name="seachLoad" class="com.etc.controller.SingleAction"
+			method="seachLoad"></action>
+		<action name="seachByName" class="com.etc.controller.SingleAction"
+			method="seachCloByName"></action>
+		<action name="seachByType" class="com.etc.controller.SingleAction"
+			method="seachCloByType"></action>
+		<action name="seachByDetail" class="com.etc.controller.SingleAction"
+			method="seachCloByDetail"></action>
+		<action name="seachByprice" class="com.etc.controller.SingleAction"
+			method="seachByprice"></action>
+		<action name="seachBySale" class="com.etc.controller.SingleAction"
+			method="seachBySale"></action>
+			
+
+		<!-- 相关推荐 -->
+		<action name="getBest" class="com.etc.controller.RecommendAction"
+			method="getbestcloths"></action>
+
+		<action name="getSimilar" class="com.etc.controller.RecommendAction"
+			method="getsimilarcloths"></action>
+
+		<action name="getNew" class="com.etc.controller.RecommendAction"
+			method="getnewcloths"></action>
+			
+			<!-- 添加购物车 -->
+			<action name="additem" class="com.etc.controller.CartAction" method="addsth">
+			<!-- <interceptor-ref name="islogin"></interceptor-ref> -->
+			<!-- <result name="fail" type="redirect">/account.html</result> -->
+			<!-- <result name="input">/account.html</result> -->
+			<!-- <result name="ok">/checkout.html</result>
+			<result name="fail">/single.html</result> -->
+			</action>
+	</package>
+	  <package name="demo4" namespace="" extends="struts-default">
+		<action name="getQClothByPage" class="com.etc.controller.QClothAction" method="getQCloths"></action>
+		<action name="getTotalPages" class="com.etc.controller.QClothAction"  method="getTotalPage"></action>
+		<action name="upload" class="com.etc.controller.UpLoadAction" method="doUpLoad">
+			<result  name="fail">/error.html</result>
+			<result  name="ok">/qcloth.html</result>
+		</action>
+		<action name="deleteQCloth" class="com.etc.controller.QClothAction" method="deleteQCloth"></action>
+
+
+		<action name="getQActivityByPage" class="com.etc.controller.QActivityAction" method="getQActivitys"></action>
+		<action name="getTotalPages2" class="com.etc.controller.QActivityAction"  method="getTotalPage"></action>
+	
+		<action name="upload2" class="com.etc.controller.UploadAction2" method="doUpLoad">
+		<result  name="fail">/error.html</result>
+		<result  name="ok">/qactivity.html</result>
+
+		</action>
+		<action name="deleteQActivity" class="com.etc.controller.QActivityAction" method="deleteQActivity"></action>
+		
+		
+</package>
+<!-- WJZ -->
+	
+
+</struts>    

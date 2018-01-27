@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="css/pintuer.css">
+<link rel="stylesheet" href="css/admin.css">
+
+<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+</head>
+<body>
+<form method="post" action="" id="listform">
+  <div class="panel admin-panel">
+    <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
+    <div class="padding border-bottom">
+      <ul class="search" style="padding-left:10px;">
+        <li> <a class="button border-main icon-plus-square-o" href="upload2.html"> 添加活动</a> </li> 
+        <li> <a class="button border-main icon-plus-square-o" href="qcloth.html"> 查看商品</a> </li>
+         
+        <li style="font-size:20px ;">欢迎管理员登录!</li>
+        </ul>
+    </div>
+    <table class="table table-hover text-center" id="qactivitytable">
+      <tr>
+        <th >ID</th>
+        <th>活动名</th>
+        <th>商品类型</th>
+        <th>活动开始时间</th>
+        <th>活动结束时间</th>
+        <th>活动折扣</th>
+        <th>活动图片</th>
+        <th >操作</th>
+      </tr>
+       
+    </table>
+     <table>
+    
+      <tr>
+        <td ><div class="pagelist"><a onclick="firstpage()" style="cursor: pointer">首页</a> <a onclick="prepage()" style="cursor: pointer" >上一页</a> <a onclick="nextpage()" style="cursor: pointer">下一页</a><a onclick="lastpage()" style="cursor: pointer">尾页</a> </div></td>
+      </tr>
+    </table>
+  </div>
+</form>
+
+ <script type="text/javascript">
+   
+   var  totalpages=1;
+   var  pagenum=1;
+    var  pagecount=5;
+    
+    function  updatepagenum(){
+    
+    $("#pagenum").html(pagenum);
+    }
+    
+    
+    
+     function  prepage(){
+       if(pagenum<=1){
+       return;
+       }
+       else{
+       pagenum--;
+       getQClothsByPage(pagenum,pagecount);
+       }
+    
+    }
+    
+    function  nextpage(){
+  
+       if(pagenum>=totalpages){
+      
+       return;
+       }
+       else{
+       pagenum++;
+     
+       getQClothsByPage(pagenum,pagecount);
+       }
+    
+    }
+    
+     function  lastpage(){
+         pagenum=totalpages;
+       getQClothsByPage(pagenum,pagecount);
+       }
+    function  firstpage(){
+        pagenum=1;
+        
+       getQClothsByPage(pagenum,pagecount);
+       }
+    
+    
+    
+    //js函数  更新共的页数
+    
+    function   updatetotalpages(){
+   
+         $.post("getTotalPages2.action",{"pagecount":pagecount},function(obj){
+         
+         totalpages=obj;
+       
+         $("#totalpages").html(totalpages);
+         },"text");
+    
+    }
+   
+   
+   //js函数：根据页数去获取数据
+   
+   function   getQActivityByPage(pagenum,pagecount){
+   
+        updatetotalpages();
+         updatepagenum();
+        
+        $.getJSON("getQActivityByPage.action" ,
+        		{
+        	"pagenum":pagenum,"pagecount":pagecount
+        	},
+        function(obj){
+           
+           var str="<tr><th >ID</th><th>活动名</th><th>商品类型</th><th>活动开始时间</th><th>活动结束时间</th><th>活动折扣</th><th>活动图片</th><th >操作</th></tr>";
+          for(var i=0;i<obj.length;i++){
+          str=str+"<tr><td>"+obj[i].activityid+"</td><td>"+obj[i].activityname+"</td><td>"+obj[i].clotype+"</td><td>"+obj[i].starttime+"</td><td>"+obj[i].endtime+"</td><td>"+obj[i].activitynum+"</td><td><img hight='50px' width='50px' src='"+obj[i].activitpic+"'/></td><td><a href='javascript:deleteQActivity("+obj[i].activityid+")'>删除</a></td><tr/>";
+          }
+          
+          $("#qactivitytable").html(str);
+         
+        }
+        
+        ); 
+   
+   }
+   
+   //页面加载事件
+   
+   $(document).ready(function(){
+       getQActivityByPage(1,5);
+   
+   });
+   
+   
+   //根据id删除
+   function deleteQActivity(op){
+     
+	   $.post("deleteQActivity.action",
+			   {"activityid":op}
+	   );
+	   //alert("pagenum "+pagenum+"  pagecount  "+pagecount);
+         getQActivityByPage(pagenum,pagecount);
+         
+   
+   }
+
+
+
+
+</script>
+</body>
+</html>

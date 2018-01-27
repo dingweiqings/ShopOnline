@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+<!-- http://localhost:8080/ZhenShuiWuShuang/products.html -->
+<head>
+<title>条件查询页面</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"
+	media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords"
+	content="Fashion Mania Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- start menu -->
+<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/memenu.js"></script>
+
+
+<script>
+	$(document).ready(function() {
+		$(".memenu").memenu();
+	});
+</script>
+<script src="js/simpleCart.min.js">
+	
+</script>
+<!-- slide -->
+
+
+</head>
+<body>
+	<!--header-->
+	<div class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="col-md-4 world">
+					<ul>
+						<li><select class="in-drop">
+								<option>中文&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+								<option>英语</option>
+								<option>法语</option>
+						</select>
+						</li>
+
+					</ul>
+				</div>
+				<div class="col-md-4 logo">
+					<a href="index.html">
+					<img src="images/logo.png" alt=""> </a>
+				</div>
+
+				<div class="col-md-4 header-left">
+					<p class="log">
+						<a href="account.html">登陆</a> <span>/</span><a href="account.html">注册</a>
+					</p>
+					<div class="cart box_1">
+						<a href="checkout.html">
+							<h3>
+								<div class="total">
+									<span class="simpleCart_total"></span>
+								</div>
+								<img src="images/cart.png" alt="" />
+							</h3> </a>
+						<p>
+							<a href="javascript:;" class="simpleCart_empty">清空购物车</a>
+						</p>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="head-top">
+				<div class="col-md-2 number">
+					<span><i class="glyphicon glyphicon-phone"></i>15156489573</span>
+				</div>
+				<div class="col-md-8 h_menu4">
+					<ul class="memenu skyblue">
+						<li class=" grid"><a href="index.html">首页</a>
+						</li>
+						<li><a href="#">全部分类</a>
+							<div class="mepanel">
+								<div class="row">
+									<div class="col1">
+										<div class="h_nav">
+											<h4>款式（cloname）</h4>
+											<ul>
+												<li><a > <p id="name1" onclick="seachByName(1)">短款</p></a>
+												</li>
+												<li><a ><p id="name2" onclick="seachByName(2)">长款</p></a>
+												</li>
+												<li><a ><p id="name3" onclick="seachByName(3)">中长款</p></a>
+												</li>
+												<li><a ><p id="name4" onclick="seachByName(4)">斗篷</p></a>
+												</li>
+												<li><a ><p id="name5" onclick="seachByName(5)">风衣</p></a>
+												</li>
+												<li><a ><p id="name6" onclick="seachByName(6)">旗袍裙</p></a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col1">
+										<div class="h_nav">
+											<h4>样式(clodetail)</h4>
+											<ul>
+												<li><a ><p id="detail1" onclick="seachBydetail(1)">无袖</p></a>
+												</li>
+												<li><a ><p id="detail2" onclick="seachBydetail(2)">短袖</p></a>
+												</li>
+												<li><a ><p id="detail3" onclick="seachBydetail(3)">长袖</p></a>
+												</li>
+												<li><a ><p id="detail4" onclick="seachBydetail(4)">斜襟</p></a>
+												</li>
+												<li><a ><p id="detail5" onclick="seachBydetail(5)">苏绣</p></a>
+												</li>
+												<li><a ><p id="detail6" onclick="seachBydetail(6)">京派</p></a>
+												</li>
+
+											</ul>
+										</div>
+									</div>
+									<div class="col1">
+										<div class="h_nav">
+											<h4>用料（clotype）</h4>
+											<ul>
+												<li><a ><p id="type1" onclick="seachBytype(1)">蚕丝</p></a>
+												</li>
+												<li><a ><p id="type2" onclick="seachBytype(2)">毛呢</p></a>
+												
+												</li>
+												<li><a ><p id="type3" onclick="seachBytype(3)">真丝</p></a>
+												
+												</li>
+												<li><a ><p id="type4" onclick="seachBytype(4)">羊绒</p></a>
+											
+												</li>
+												<li><a ><p id="type5" onclick="seachBytype(5)">纤维</p></a>
+												
+												</li>
+												<li><a ><p id="type6" onclick="seachBytype(6)">锦绣</p></a>
+												
+												</li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div></li>
+						<li class="grid"><a href="#">价格/销量/风格</a>
+							<div class="mepanel">
+								<div class="row">
+									<div class="col1">
+										<div class="h_nav">
+											<h4>价格(￥)</h4>
+											<ul>
+											
+												<li><a ><p id="price1" onclick="seachByprice(1)">100-500</p></a>
+												</li>
+												<li><a ><p id="price2" onclick="seachByprice(2)">500-1000</p></a>
+												</li>
+												<li><a ><p id="price3" onclick="seachByprice(3)">1000-1500</p></a>
+							
+												</li>
+												<li><a ><p id="price4" onclick="seachByprice(4)">1500-2000</p></a>
+												
+												</li>
+												<li><a ><p id="price5" onclick="seachByprice(5)">2000-2500</p></a>
+												
+												</li>
+												<li><a ><p id="price6" onclick="seachByprice(6)">2500-3000</p></a>
+												
+												</li>
+												<li><a ><p id="price7" onclick="seachByprice(7)">3000-4000</p></a>
+												
+												</li>
+												<li><a ><p id="price8" onclick="seachByprice(8)">4000-5000</p></a>
+												
+												</li>
+												
+
+											</ul>
+										</div>
+									</div>
+									<div class="col1">
+										<div class="h_nav">
+											<h4>销量(件)</h4>
+											<ul>
+											
+												<li><a><p id="count1" onclick="seachByBuy(1)">8000-10000</p></a>
+												</li>
+												<li><a><p id="count2" onclick="seachByBuy(2)">6000-8000</p></a>
+												</li>
+												<li><a><p id="count3" onclick="seachByBuy(3)">5000-6000</p></a>
+												
+												</li>
+												<li><a><p id="count4" onclick="seachByBuy(4)">4000-5000</p></a>
+												
+												</li>
+												<li><a><p id="count5" onclick="seachByBuy(5)">3000-4000</p></a>
+												
+												</li>
+												<li><a><p id="count6" onclick="seachByBuy(6)">2000-3000</p></a>
+												
+												</li>
+												<li><a><p id="count7" onclick="seachByBuy(7)">1000-2000</p></a>
+											
+												</li>
+												<li><a><p id="count8" onclick="seachByBuy(8)">0-1000</p></a>
+											
+												</li>
+
+
+											</ul>
+										</div>
+									</div>
+									<div class="col1">
+										<div class="h_nav">
+											<h4>风格（clodetail）</h4>
+											<ul>
+												<li><a ><p id="detail7" onclick="seachBydetail(7)">复古</p></a>
+												</li>
+												<li><a ><p id="detail8" onclick="seachBydetail(8)">现代</p></a>
+												</li>
+												<li><a ><p id="detail9" onclick="seachBydetail(9)">京派</p></a>
+												</li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div></li>
+						<!-- <li><a  href="typo.html">博客</a></li>				
+				<li><a class="color6" href="contact.html">联系商家</a></li> -->
+					</ul>
+				</div>
+				<div class="col-md-2 search">
+					<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i
+						class="glyphicon glyphicon-search"> </i> </a>
+				</div>
+				<div class="clearfix"></div>
+				<!---pop-up-box---->
+				<script type="text/javascript" src="js/modernizr.custom.min.js"></script>
+				<link href="css/popuo-box.css" rel="stylesheet" type="text/css"
+					media="all" />
+				<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+				<!---//pop-up-box---->
+				<div id="small-dialog" class="mfp-hide">
+					<div class="search-top">
+						<div class="login">
+							<input type="submit" value=""> <input type="text"
+								value="Type something..." onfocus="this.value = '';"
+								onblur="if (this.value == '') {this.value = '';}">
+						</div>
+						<p>关键字搜索</p>
+					</div>
+				</div>
+
+				<script type="text/javascript">
+					
+					//根据描述细节搜索；
+					function seachCloByDetail(keyDetail) {
+						alert(333);
+						$.getJSON("seachByDetail.action", {
+							"clodetail" : keyDetail
+						}, function(obj) {
+							alert(222);
+							alert(obj);
+						}
+
+						);
+					}
+					//根据价格搜索		
+					function seachCloByPrice(keyPriceLow, keyPriceHigh) {
+						alert(333);
+						$.getJSON("seachByDetail.action", {
+							"keyPriceLow" : keyPriceLow,
+							"keyPriceHigh" : keyPriceHigh
+						}, function(obj) {
+							alert(222);
+							alert(obj);
+						}
+
+						);
+					}
+				</script>
+
+
+				<script>
+					$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type : 'inline',
+							fixedContentPos : false,
+							fixedBgPos : true,
+							overflowY : 'auto',
+							closeBtnInside : true,
+							preloader : false,
+							midClick : true,
+							removalDelay : 300,
+							mainClass : 'my-mfp-zoom-in'
+						});
+
+					});
+				</script>
+				<!---->
+			</div>
+		</div>
+	</div>
+	<!--content-->
+	<div class="products">
+		<div class="container">
+			<h1>products</h1>
+			
+			<!-- 商品展示div -->
+			 <div class="col-md-9" id="contentTotal">		  
+				<!-- 商品展示区域 -->
+			</div> 
+		
+		
+			<div class="col-md-3 product-bottom">
+				<div class=" rsidebar span_1_of_left">
+					<h3 class="cate">待定功能区域</h3>
+					<ul class="menu-drop">
+						<li class="item1"><a href="#">Men </a>
+							<ul class="cute">
+								<li class="subitem1"><a href="single.html">Cute Kittens
+								</a>
+								</li>
+								<li class="subitem2"><a href="single.html">Strange
+										Stuff </a>
+								</li>
+								<li class="subitem3"><a href="single.html">Automatic
+										Fails </a>
+								</li>
+							</ul></li>
+						<li class="item2"><a href="#">Women </a>
+							<ul class="cute">
+								<li class="subitem1"><a href="single.html">Cute Kittens
+								</a>
+								</li>
+								<li class="subitem2"><a href="single.html">Strange
+										Stuff </a>
+								</li>
+								<li class="subitem3"><a href="single.html">Automatic
+										Fails </a>
+								</li>
+							</ul></li>
+						<li class="item3"><a href="#">Kids</a>
+							<ul class="cute">
+								<li class="subitem1"><a href="single.html">Cute Kittens
+								</a>
+								</li>
+								<li class="subitem2"><a href="single.html">Strange
+										Stuff </a>
+								</li>
+								<li class="subitem3"><a href="single.html">Automatic
+										Fails</a>
+								</li>
+							</ul></li>
+						<li class="item4"><a href="#">Accesories</a>
+							<ul class="cute">
+								<li class="subitem1"><a href="single.html">Cute Kittens
+								</a>
+								</li>
+								<li class="subitem2"><a href="single.html">Strange
+										Stuff </a>
+								</li>
+								<li class="subitem3"><a href="single.html">Automatic
+										Fails</a>
+								</li>
+							</ul></li>
+
+						<li class="item4"><a href="#">Shoes</a>
+							<ul class="cute">
+								<li class="subitem1"><a href="product.html">Cute
+										Kittens </a>
+								</li>
+								<li class="subitem2"><a href="product.html">Strange
+										Stuff </a>
+								</li>
+								<li class="subitem3"><a href="product.html">Automatic
+										Fails </a>
+								</li>
+							</ul></li>
+					</ul>
+				</div>
+				 
+				
+				<!--initiate accordion-->
+				<script type="text/javascript">
+					$(function() {
+						var menu_ul = $('.menu-drop > li > ul'), menu_a = $('.menu-drop > li > a');
+						menu_ul.hide();
+						menu_a.click(function(e) {
+							e.preventDefault();
+							if (!$(this).hasClass('active')) {
+								menu_a.removeClass('active');
+								menu_ul.filter(':visible').slideUp('normal');
+								$(this).addClass('active').next().stop(true,
+										true).slideDown('normal');
+							} else {
+								$(this).removeClass('active');
+								$(this).next().stop(true, true).slideUp(
+										'normal');
+							}
+						});
+
+					});
+				</script>
+				<!--//menu-->
+				<!--seller-->
+				<div class="product-bottom">
+					<h3 class="cate">Best Sellers</h3>
+					<div class="product-go">
+						<div class=" fashion-grid">
+							<a href="single.html"><img class="img-responsive "
+								src="images/pr.jpg" alt=""> </a>
+						</div>
+						<div class=" fashion-grid1">
+							<h6 class="best2">
+								<a href="single.html">Lorem ipsum dolor sitamet consectetuer
+								</a>
+							</h6>
+							<span class=" price-in1"> $40.00</span>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="product-go">
+						<div class=" fashion-grid">
+							<a href="single.html"><img class="img-responsive "
+								src="images/pr1.jpg" alt=""> </a>
+						</div>
+						<div class=" fashion-grid1">
+							<h6 class="best2">
+								<a href="single.html">Lorem ipsum dolor sitamet consectetuer
+								</a>
+							</h6>
+							<span class=" price-in1"> $40.00</span>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="product-go">
+						<div class=" fashion-grid">
+							<a href="single.html"><img class="img-responsive "
+								src="images/pr2.jpg" alt=""> </a>
+						</div>
+						<div class=" fashion-grid1">
+							<h6 class="best2">
+								<a href="single.html">Lorem ipsum dolor sitamet consectetuer
+								</a>
+							</h6>
+							<span class=" price-in1"> $40.00</span>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="product-go">
+						<div class=" fashion-grid">
+							<a href="single.html"><img class="img-responsive "
+								src="images/pr3.jpg" alt=""> </a>
+						</div>
+						<div class=" fashion-grid1">
+							<h6 class="best2">
+								<a href="single.html">Lorem ipsum dolor sitamet consectetuer
+								</a>
+							</h6>
+							<span class=" price-in1"> $40.00</span>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!--//content-->
+	<!--footer-->
+	<div class="footer">
+		<div class="container"></div>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="col-md-3 footer-bottom-cate">
+					<h6>Categories</h6>
+					<ul>
+						<li><a href="#">Curabitur sapien</a>
+						</li>
+						<li><a href="#">Dignissim purus</a>
+						</li>
+						<li><a href="#">Tempus pretium</a>
+						</li>
+						<li><a href="#">Dignissim neque</a>
+						</li>
+						<li><a href="#">Ornared id aliquet</a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="col-md-3 footer-bottom-cate">
+					<h6>Feature Projects</h6>
+					<ul>
+						<li><a href="#">Curabitur sapien</a>
+						</li>
+						<li><a href="#">Dignissim purus</a>
+						</li>
+						<li><a href="#">Tempus pretium</a>
+						</li>
+						<li><a href="#">Dignissim neque</a>
+						</li>
+						<li><a href="#">Ornared id aliquet</a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="col-md-3 footer-bottom-cate">
+					<h6>Top Brands</h6>
+					<ul>
+						<li><a href="#">Curabitur sapien</a>
+						</li>
+						<li><a href="#">Dignissim purus</a>
+						</li>
+						<li><a href="#">Tempus pretium</a>
+						</li>
+						<li><a href="#">Dignissim neque</a>
+						</li>
+						<li><a href="#">Ornared id aliquet</a>
+						</li>
+						<li><a href="#">Ultrices id du</a>
+						</li>
+						<li><a href="#">Commodo sit</a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="col-md-3 footer-bottom-cate cate-bottom">
+					<h6>Our Address</h6>
+					<ul>
+						<li>Aliquam metus dui.</li>
+						<li>orci, ornareidquet</li>
+						<li>ut,DUI.</li>
+						<li>nisi, dignissim</li>
+						<li>gravida at.</li>
+						<li class="phone">PH : 6985792466</li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+
+			</div>
+		</div>
+	</div>
+
+	<!--//footer-->
+	
+	<script type="text/javascript">
+
+       /* //按类型查询
+		 $("#long").click( function() {
+			
+			$.ajax({
+				url : "seachByType.action",
+				data : {
+					"clotype" : keytype
+				},
+				async : false,
+				dataType : "json",
+				global:false,
+				error : function(data) {
+					alert("fail");
+				},
+				success : function(req) {
+					 
+		       var strv=" <div class='content-top1'>";
+		       var str=" ";
+				for ( var i = 0; i < req.length; i++) { 
+						str=str+" <div class='col-md-4 col-md3' id='content-clo0'>"+
+						"<div class='col-md1 simpleCart_shelfItem'>"+
+							"<a href='single.html'>"+
+								"<img class='img-responsive' src=images/"+req[i].clopic1+" style='width:220px;height:280px' /></a>"+
+							"<h3><a href='single.html'>"+req[i].cloname+"</a></h3>"+
+							"<div class='price'>"+
+									"<h5 class='item_price'>￥"+ req[i].cloprice+"</h5>"+
+									"<a href='#' class='item_add'>立即购买</a>"+
+									"<div class='clearfix'> </div></div></div></div>";	
+						
+						if(i==0){
+						  str=strv+str;
+						}else if((i+1)%3==0){
+						  str=str+"<div class='clearfix'> </div> </div>	"+strv;
+						}
+					 } 
+					 if ((req.length % 3) != 0) {
+						 str = str + "<div class='clearfix'> </div> </div>	";
+					  } else{
+					  str = str+"</div>";
+					  }
+					    $("#contentTotal").html(str); 	  
+				}
+			});
+		} ); 
+	 */
+	 //根据detail关键字搜索；
+    function seachBydetail(j){
+          var keydetail=$("#detail"+j).html();   
+       /*  alert(keydetail); */
+		$.getJSON("seachByDetail.action", {
+		"clodetail" : keydetail
+		}, function(obj) {
+		
+		 var strv=" <div class='content-top1'>";
+		       var str=" ";
+				for ( var i = 0; i < obj.length; i++) { 
+					alert(" products.html 618 "+obj[i].clopic1)
+						str=str+" <div class='col-md-4 col-md3' id='content-clo0'>"+
+						"<div class='col-md1 simpleCart_shelfItem'>"+
+							"<a href='single.html?cloid="+obj[i].cloid+"'>"+
+								"<img class='img-responsive' src='"+obj[i].clopic1+"' style='width:220px;height:280px' /></a>"+
+							"<h3><a href='single.html?cloid="+obj[i].cloid+"'>"+obj[i].cloname+"</a></h3>"+
+							"<div class='price'>"+
+									"<h5 class='item_price'>￥"+ obj[i].cloprice+"</h5>"+
+									"<a href='single.html?cloid="+obj[i].cloid+"' class='item_add'>立即购买</a>"+
+									"<div class='clearfix'> </div></div></div></div>";	
+						
+						if(i==0){
+						  str=strv+str;
+						}else if((i+1)%3==0){
+						  str=str+"<div class='clearfix'> </div> </div>	"+strv;
+						}
+					 } 
+					 if ((obj.length % 3) != 0) {
+						 str = str + "<div class='clearfix'> </div> </div>	";
+					  } else{
+					  str = str+"</div>";
+					  }
+					    $("#contentTotal").html(str); 
+					  
+		});
+		 
+        }
+	
+	    //根据类型关键字搜索；
+    function seachBytype(j){
+          var keytype=$("#type"+j).html();   
+    /*     alert(keytype); */
+		$.getJSON("seachByType.action", {
+		"clotype" : keytype
+		}, function(obj) {
+		
+		 var strv=" <div class='content-top1'>";
+		       var str=" ";
+				for ( var i = 0; i < obj.length; i++) { 
+						str=str+" <div class='col-md-4 col-md3' id='content-clo0'>"+
+						"<div class='col-md1 simpleCart_shelfItem'>"+
+							"<a href='single.html?cloid="+obj[i].cloid+"'>"+
+								"<img class='img-responsive' src='"+obj[i].clopic1+"' style='width:220px;height:280px' /></a>"+
+							"<h3><a href='single.html?cloid="+obj[i].cloid+"'>"+obj[i].cloname+"</a></h3>"+
+							"<div class='price'>"+
+									"<h5 class='item_price'>￥"+ obj[i].cloprice+"</h5>"+
+									"<a href='single.html?cloid="+obj[i].cloid+"' class='item_add'>立即购买</a>"+
+									"<div class='clearfix'> </div></div></div></div>";	
+						
+						if(i==0){
+						  str=strv+str;
+						}else if((i+1)%3==0){
+						  str=str+"<div class='clearfix'> </div> </div>	"+strv;
+						}
+					 } 
+					 if ((obj.length % 3) != 0) {
+						 str = str + "<div class='clearfix'> </div> </div>	";
+					  } else{
+					  str = str+"</div>";
+					  }
+					    $("#contentTotal").html(str); 
+					  
+		});
+		 
+        }
+	
+	 //根据销量搜索；
+    function seachByBuy(j){
+    var keysale=$("#count"+j).html();
+		$.getJSON("seachBySale.action", {
+		"closale" : keysale
+		}, function(obj) {
+		/* alert(keysale);
+		alert(obj); */
+		 var strv=" <div class='content-top1'>";
+		       var str=" ";
+				for ( var i = 0; i < obj.length; i++) { 
+						str=str+" <div class='col-md-4 col-md3' id='content-clo0'>"+
+						"<div class='col-md1 simpleCart_shelfItem'>"+
+							"<a href='single.html?cloid="+obj[i].cloid+"'>"+
+								"<img class='img-responsive' src='"+obj[i].clopic1+"' style='width:220px;height:280px' /></a>"+
+							"<h3><a href='single.html?cloid="+obj[i].cloid+"'>"+obj[i].cloname+"</a></h3>"+
+							"<div class='price'>"+
+									"<h5 class='item_price'>￥"+ obj[i].cloprice+"</h5>"+
+									"<a href='single.html?cloid="+obj[i].cloid+"' class='item_add'>立即购买</a>"+
+									"<div class='clearfix'> </div></div></div></div>";	
+						
+						if(i==0){
+						  str=strv+str;
+						}else if((i+1)%3==0){
+						  str=str+"<div class='clearfix'> </div> </div>	"+strv;
+						}
+					 } 
+					 if ((obj.length % 3) != 0) {
+						 str = str + "<div class='clearfix'> </div> </div>	";
+					  } else{
+					  str = str+"</div>";
+					  }
+					    $("#contentTotal").html(str); 
+					  
+		});
+    }
+	
+	 //根据价格搜索；
+    function seachByprice(j){
+    var keyprice=$("#price"+j).html();
+		$.getJSON("seachByprice.action", {
+		"cloprice" : keyprice
+		}, function(obj) {
+		
+		 var strv=" <div class='content-top1'>";
+		       var str=" ";
+				for ( var i = 0; i < obj.length; i++) { 
+					alert(" objpic "+"<img class='img-responsive' src='"+obj[i].clopic1+"' style='width:220px;height:280px' />");
+						str=str+" <div class='col-md-4 col-md3' id='content-clo0'>"+
+						"<div class='col-md1 simpleCart_shelfItem'>"+
+							"<a href='single.html?cloid="+obj[i].cloid+"'>"+
+								"<img class='img-responsive' src='"+obj[i].clopic1+"' style='width:220px;height:280px' /></a>"+
+							"<h3><a href='single.html?cloid="+obj[i].cloid+"'>"+obj[i].cloname+"</a></h3>"+
+							"<div class='price'>"+
+									"<h5 class='item_price'>￥"+ obj[i].cloprice+"</h5>"+
+									"<a href='single.html?cloid="+obj[i].cloid+"' class='item_add'>立即购买</a>"+
+									"<div class='clearfix'> </div></div></div></div>";	
+						
+						if(i==0){
+						  str=strv+str;
+						}else if((i+1)%3==0){
+						  str=str+"<div class='clearfix'> </div> </div>	"+strv;
+						}
+					 } 
+					 if ((obj.length % 3) != 0) {
+						 str = str + "<div class='clearfix'> </div> </div>	";
+					  } else{
+					  str = str+"</div>";
+					  }
+					    $("#contentTotal").html(str); 
+					  
+		});
+    }
+	
+	    //根据名字关键字搜索；
+    function seachByName(j){
+   
+          var keyname=$("#name"+j).html();   
+    
+		$.getJSON("seachByName.action", {
+		"cloname" : keyname
+		}, function(obj) {
+		
+		 var strv=" <div class='content-top1'>";
+		       var str=" ";
+				for ( var i = 0; i < obj.length; i++) { 
+						str=str+" <div class='col-md-4 col-md3' id='content-clo0'>"+
+						"<div class='col-md1 simpleCart_shelfItem'>"+
+							"<a href='single.html?cloid="+obj[i].cloid+"'>"+
+								"<img class='img-responsive' src='"+obj[i].clopic1+"' style='width:220px;height:280px' /></a>"+
+							"<h3><a href='single.html?cloid="+obj[i].cloid+"'>"+obj[i].cloname+"</a></h3>"+
+							"<div class='price'>"+
+									"<h5 class='item_price'>￥"+ obj[i].cloprice+"</h5>"+
+									"<a href='single.html?cloid="+obj[i].cloid+"' class='item_add'>立即购买</a>"+
+									"<div class='clearfix'> </div></div></div></div>";	
+						
+						if(i==0){
+						  str=strv+str;
+						}else if((i+1)%3==0){
+						  str=str+"<div class='clearfix'> </div> </div>	"+strv;
+						}
+					 } 
+					 if ((obj.length % 3) != 0) {
+						 str = str + "<div class='clearfix'> </div> </div>	";
+					  } else{
+					  str = str+"</div>";
+					  }
+					    $("#contentTotal").html(str); 
+					  
+		});
+		 
+        }
+	
+	
+	//初始页面加载商品信息；
+	$(document).ready(function() {
+	
+	$.getJSON("seachLoad.action", {
+		"loadflag" : "load"
+		},function(obj) {
+		
+		 var strv=" <div class='content-top1'>";
+		       var str=" ";
+		       
+		       if(obj.length>=9){
+		        for ( var i = 0; i < 9; i++) { 
+						str=str+" <div class='col-md-4 col-md3' id='content-clo0'>"+
+						"<div class='col-md1 simpleCart_shelfItem'>"+
+							"<a href='single.html?cloid="+obj[i].cloid+"'>"+
+								"<img class='img-responsive' src='"+obj[i].clopic1+"' style='width:220px;height:280px' /></a>"+
+							"<h3><a href='single.html?cloid="+obj[i].cloid+"'>"+obj[i].cloname+"</a></h3>"+
+							"<div class='price'>"+
+									"<h5 class='item_price'>￥"+ obj[i].cloprice+"</h5>"+
+									"<a href='single.html?cloid="+obj[i].cloid+"' class='item_add'>立即购买</a>"+
+									"<div class='clearfix'> </div></div></div></div>";	
+						
+						if(i==0){
+						  str=strv+str;
+						}else if((i+1)%3==0){
+						  str=str+"<div class='clearfix'> </div> </div>	"+strv;
+						}
+					 } 
+					 if ((obj.length % 3) != 0) {
+						 str = str + "<div class='clearfix'> </div> </div>	";
+					  } else{
+					  str = str+"</div>";
+					  }
+		      		       
+		       }else{
+		       for ( var i = 0; i < obj.length; i++) { 
+						str=str+" <div class='col-md-4 col-md3' id='content-clo0'>"+
+						"<div class='col-md1 simpleCart_shelfItem'>"+
+							"<a href='single.html?cloid="+obj[i].cloid+"'>"+
+								"<img class='img-responsive' src='"+obj[i].clopic1+"' style='width:220px;height:280px' /></a>"+
+							"<h3><a href='single.html?cloid="+obj[i].cloid+"'>"+obj[i].cloname+"</a></h3>"+
+							"<div class='price'>"+
+									"<h5 class='item_price'>￥"+ obj[i].cloprice+"</h5>"+
+									"<a href='single.html?cloid="+obj[i].cloid+"' class='item_add'>立即购买</a>"+
+									"<div class='clearfix'> </div></div></div></div>";	
+						
+						if(i==0){
+						  str=strv+str;
+						}else if((i+1)%3==0){
+						  str=str+"<div class='clearfix'> </div> </div>	"+strv;
+						}
+					 } 
+					 if ((obj.length % 3) != 0) {
+						 str = str + "<div class='clearfix'> </div> </div>	";
+					  } else{
+					  str = str+"</div>";
+					  }
+		       
+		       }
+				
+					    $("#contentTotal").html(str); 
+		
+        } );
+	});
+	
+	
+	
+	
+	
+	//
+	
+</script>
+
+
+
+	
+</body>
+</html>

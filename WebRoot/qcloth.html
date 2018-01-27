@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="css/pintuer.css">
+<link rel="stylesheet" href="css/admin.css">
+
+<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+</head>
+<body>
+<form method="post" action="" id="listform">
+  <div class="panel admin-panel">
+    <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
+    <div class="padding border-bottom">
+      <ul class="search" style="padding-left:10px;">
+        <li> <a class="button border-main icon-plus-square-o" href="upload.html"> 添加内容</a> </li> 
+        <li> <a class="button border-main icon-plus-square-o" href="qactivity.html"> 查看活动</a> </li>
+         
+        <li style="font-size:20px ;">欢迎管理员登录!</li>
+        </ul>
+    </div>
+    <table class="table table-hover text-center" id="qclothtable">
+      <tr>
+        <th >ID</th>
+        <th>价格</th>
+        <th>图片</th>
+        <th>名称</th>
+        <th>活动id</th>
+        <th>销量</th>
+        <th>上架时间</th>
+        <th >操作</th>
+      </tr>
+       
+    </table>
+     <table>
+    
+      <tr>
+        <td ><div class="pagelist"><a onclick="firstpage()" style="cursor: pointer">首页</a> <a onclick="prepage()" style="cursor: pointer" >上一页</a> <a onclick="nextpage()" style="cursor: pointer">下一页</a><a onclick="lastpage()" style="cursor: pointer">尾页</a> </div></td>
+      </tr>
+    </table>
+  </div>
+</form>
+
+ <script type="text/javascript">
+   
+   var  totalpages=1;
+   var  pagenum=1;
+    var  pagecount=5;
+    
+    function  updatepagenum(){
+    
+    $("#pagenum").html(pagenum);
+    }
+    
+    
+    
+     function  prepage(){
+       if(pagenum<=1){
+       return;
+       }
+       else{
+       pagenum--;
+       getQClothsByPage(pagenum,pagecount);
+       }
+    
+    }
+    
+    function  nextpage(){
+  
+       if(pagenum>=totalpages){
+      
+       return;
+       }
+       else{
+       pagenum++;
+     
+       getQClothsByPage(pagenum,pagecount);
+       }
+    
+    }
+    
+     function  lastpage(){
+         pagenum=totalpages;
+       getQClothsByPage(pagenum,pagecount);
+       }
+    function  firstpage(){
+        pagenum=1;
+        
+       getQClothsByPage(pagenum,pagecount);
+       }
+    
+    
+    
+    //js函数  更新共的页数
+    
+    function   updatetotalpages(){
+   
+         $.post("getTotalPages.action",{"pagecount":pagecount},function(obj){
+         
+         totalpages=obj;
+       
+         $("#totalpages").html(totalpages);
+         },"text");
+    
+    }
+   
+   
+   //js函数：根据页数去获取数据
+   
+   function   getQClothsByPage(pagenum,pagecount){
+   
+        updatetotalpages();
+         updatepagenum();
+        
+        $.getJSON("getQClothByPage.action" ,{"pagenum":pagenum,"pagecount":pagecount},
+        function(obj){
+          // alert(obj[0].cloid);
+           var str="<tr><th >ID</th><th>价格</th><th>图片</th><th>名称</th><th>活动id</th><th>销量</th><th>上架时间</th><th >操作</th></tr>";
+          for(var i=0;i<obj.length;i++){
+          str=str+"<tr><td>"+obj[i].cloid+"</td><td>"+obj[i].cloprice+"</td><td><img hight='50px' width='50px' src='"+obj[i].clopic1+"'/></td><td>"+obj[i].cloname+"</td><td>"+obj[i].clomove+"</td><td>"+obj[i].closale+"</td><td>"+obj[i].clodate+"</td><td><a href='javascript:deleteQCloth("+obj[i].cloid+")'>删除</a></td><tr/>";
+          }
+          
+          $("#qclothtable").html(str);
+         
+        }
+        
+        ); 
+   
+   }
+   
+   //页面加载事件
+   
+   $(document).ready(function(){
+       getQClothsByPage(1,5);
+   
+   });
+   
+   
+   //根据id删除
+   function deleteQCloth(op){
+     
+         $.post("deleteQCloth.action",
+        		 {"cloid":op}
+        );
+         
+      
+         getQClothsByPage(pagenum,pagecount);
+         
+   
+   }
+
+
+
+</script>
+</body>
+</html>

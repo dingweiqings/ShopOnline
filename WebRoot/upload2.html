@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>upload.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  <div  style="text-align:center;padding-top:20px;" >
+    <form action="upload2.action" method="post" enctype="multipart/form-data">
+   <table style="margin:auto;  font-size:30px">
+      <tr><td>活动名：<td/><td><input type="text"  name="activityname"><td/><tr/>
+      <tr><td>商品类型：<td/><td><input type="text"  name="clotype"><td/><tr/>
+      <tr><td>活动开始时间：<td/><td><input type="date"  name="starttime"><td/><tr/>
+      <tr><td>活动结束时间：<td/><td><input type="date"  name="endtime"><td/><tr/>
+      <tr><td>活动折扣：<td/><td><input type="text"  name="activitynum"><td/><tr/>
+      
+      <tr><td>活动图片：<td/><td><input type="file"  name="activitypic"><td/><tr/>
+      
+      
+      <tr><td><input type="submit" value="确定上传" style="height: 40px;width: 100px;cursor: pointer;"> <td/> <tr/>
+      <tr><td><a href="qcloth.html">返回首页</a><td/><tr/>
+   </table>
+ 
+    </form>
+    </div>
+  <script type="text/javascript">
+  //对参数进行校验
+  //折扣必须是数字,开始日期不能小于今天,结束时间不能小于今天,不能小于开始时间,开始时间不能为空
+  
+  
+  </script>
+  </body>
+</html>

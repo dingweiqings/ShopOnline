@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Fashion Mania Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- start menu -->
+<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/memenu.js"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>
+<script src="js/simpleCart.min.js"> </script>
+<!-- slide -->
+<script src="js/responsiveslides.min.js"></script>
+   <script>
+    $(function () {
+     
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+
+      
+      var pagetotalnum=0;//总页数
+      var  pagenum=1;//当前的页数
+      var  pagecount=8;//每页8件
+      getPages(pagecount);
+      selCloth(pagecount,pagenum);
+      islogin(); 
+      
+      
+   //预加载方法的结束   
+    });
+  </script>
+</head>
+<body>
+<!--header-->
+<div class="header">
+	<div class="header-top">
+		<div class="container">
+		<div style="top:0px;" class="col-md-4 world">
+					<a href="index.html"><img style=" height: 62px;"
+						src="images/wel.jpg" alt=""> </a>
+				</div>
+				<div class="col-sm-4 logo">
+					<a href="index.html"><img src="images/logo.png" alt=""></a>	
+				</div>
+		
+			<div class="col-sm-4 header-left">	
+			        <div id="islogin">
+					<p class="log"><a href="account.html"  >登陆</a>
+						<span>or</span><a  href="register.html"  >注册</a></p>
+					</div>	
+					<div class="cart box_1">
+						<a href="checkout.html">
+						<h3> <div class="total">
+							<!-- <span class="simpleCart_total"></span> --></div>
+							<img src="images/cart.png" alt=""/></h3>
+						</a>
+						
+
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+				<div class="clearfix"> </div>
+		</div>
+		</div>
+		<div class="container">
+			<div class="head-top">
+				<div class="col-sm-2 number">
+					<span><i class="glyphicon glyphicon-phone"></i>085 596 234</span>
+				</div>
+		 <div class="col-sm-8 h_menu4">
+				<ul class="memenu skyblue">
+					  <li class=" grid"><a  href="index.html">首页展示</a></li>	
+				      <li><a  href="products.html">分类搜索</a>
+				      	<!-- <div class="mepanel">
+						<div class="row">
+							<div class="col1">
+								<div class="h_nav">
+									<h4>All Clothing</h4>
+									<ul>
+										<li><a href="products.html">Shirts</a></li>
+										<li><a href="products.html">Sports Wear</a></li>
+										<li><a href="products.html">Shorts</a></li>
+										<li><a href="products.html">Suits & Blazers</a></li>
+										<li><a href="products.html">Formal Shirts</a></li>
+										<li><a href="products.html">Sweatpants</a></li>
+										<li><a href="products.html">Swimwear</a></li>
+										<li><a href="products.html">Trousers & Chinos</a></li>
+										<li><a href="products.html">T-Shirts</a></li>
+										<li><a href="products.html">Underwear & Socks</a></li>
+										
+									</ul>	
+								</div>							
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Footwear</h4>
+									<ul>
+										<li><a href="products.html">Formal Shoes</a></li>
+										<li><a href="products.html">Boots</a></li>
+										<li><a href="products.html">Sports Shoes</a></li>
+										<li><a href="products.html">Casual Shoes</a></li>
+										<li><a href="products.html">Running Shoes</a></li>
+										<li><a href="products.html">Sneakers</a></li>
+										<li><a href="products.html">Loafers</a></li>
+										<li><a href="products.html">Slippers</a></li>
+										<li><a href="products.html">Sandals</a></li>
+										<li><a href="products.html">Flip-flops</a></li>
+									
+									</ul>	
+								</div>							
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>												
+							</div>
+						  </div>
+						</div>
+					 -->
+					</li>
+				    <li class="grid"><a  href="#">活动详情</a>
+					  <!-- 	<div class="mepanel">
+						<div class="row">
+							<div class="col1">
+								<div class="h_nav">
+									<h4>All Clothing</h4>
+									<ul>
+										<li><a href="products.html">Shirts & Tops</a></li>
+										<li><a href="products.html">Sports Wear</a></li>
+										<li><a href="products.html">Kurtas & Kurties</a></li>
+										<li><a href="products.html">Suits & Blazers</a></li>
+										<li><a href="products.html">Sarees</a></li>
+										<li><a href="products.html">Sweatpants</a></li>
+										<li><a href="products.html">Swimwear</a></li>
+										<li><a href="products.html">Night-Suits</a></li>
+										<li><a href="products.html">T-Shirts</a></li>
+										<li><a href="products.html">Jeans</a></li>
+										
+									</ul>	
+								</div>							
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Footwear</h4>
+									<ul>
+										<li><a href="products.html">Heels</a></li>
+										<li><a href="products.html">Flats</a></li>
+										<li><a href="products.html">Sports Shoes</a></li>
+										<li><a href="products.html">Casual Shoes</a></li>
+										<li><a href="products.html">Running Shoes</a></li>
+										<li><a href="products.html">Wedges</a></li>
+										<li><a href="products.html">Boots</a></li>
+										<li><a href="products.html">Pumps</a></li>
+										<li><a href="products.html">Slippers</a></li>
+										<li><a href="products.html">Flip-flops</a></li>
+									
+									</ul>
+								</div>							
+							</div>
+							<div class="col1">
+								<div class="h_nav">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>												
+							</div>
+						  </div>
+						</div>
+			   -->
+			    </li>
+				<li><a  href="user.html">个人中心</a></li>				
+			  </ul> 
+			</div>
+				<div class="col-sm-2 search">		
+			<a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a>
+		</div>
+		<div class="clearfix"> </div>
+			<!---pop-up-box---->
+					  <script type="text/javascript" src="js/modernizr.custom.min.js"></script>    
+					<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+					<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+					<!---//pop-up-box---->
+				<div id="small-dialog" class="mfp-hide">
+				<div class="search-top">
+						<div class="login">
+							<input type="submit" value="">
+							<input type="text" value="Type something..." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}">		
+						</div>
+						<p>	Shopping</p>
+					</div>				
+				</div>
+				 <script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+																						
+						});
+				</script>			
+	<!---->		
+		</div>
+	</div>
+</div>
+<!--banner-->
+<div class="banner">
+	<div class="col-sm-3 banner-mat">
+		<!-- <img class="img-responsive"	src="images/ba1.jpg" alt=""> -->
+		<img class="img-responsive"	src="images/clos.jpg" alt="">
+	</div>
+	<div class="col-sm-6 matter-banner">
+	 	<div class="slider">
+	    	<div class="callbacks_container">
+	      		<ul class="rslides" id="slider">
+	        		<li>
+	          			<!-- <img src="images/1.jpg" alt=""> -->
+	          			<img src="images/action1.jpg" alt="">
+	       			 </li>
+			 		 <li>
+	          			<!-- <img src="images/2.jpg" alt="">  --> 
+	          			<img src="images/action2.jpg" alt=""> 
+	       			 </li>
+					 <li>
+	          			<!-- <img src="images/1.jpg" alt=""> -->
+	          			<img src="images/action3.jpg" alt="">
+	        		</li>	
+	      		</ul>
+	 	 	</div>
+		</div>
+	</div>
+	<div class="col-sm-3 banner-mat">
+		<!-- <img class="img-responsive" src="images/ba.jpg" alt=""> -->
+		<img class="img-responsive" src="images/clos1.jpg" alt="">
+	</div>
+	<div class="clearfix"> </div>
+</div>
+<!--//banner-->
+<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >手机网站模板</a></div>
+<!--content-->
+<div class="content">
+	<div class="container">
+		<div class="content-top"  >
+			<h1 >热销推荐</h1>
+			<div id="pages"></div>
+			<!-- <div class="content-top1" >
+					<div class="col-md1 simpleCart_shelfItem">
+						<a href="single.html">
+							<img class="img-responsive" src="images/pi.png" alt="" />
+						    <img class="img-responsive" src="images/p1.jpg" alt="" style="width:320px;height:320px"/> 
+						</a>
+						<h3><a href="single.html">Tops</a></h3>
+						<div class="price">
+								<h5 class="item_price">$300</h5>
+								<a href="#" class="item_add">Add To Cart</a>
+								<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>	
+			<div class="col-md-3 col-md2">
+					<div class="col-md1 simpleCart_shelfItem">
+						<a href="single.html">
+							<img class="img-responsive" src="images/pi2.png" alt="" />
+						 <img class="img-responsive" src="images/p2.jpg" alt="" style="width:320px;height:320px"/> 
+						</a>
+						<h3><a href="single.html">T-Shirt</a></h3>
+						<div class="price">
+								<h5 class="item_price">$300</h5>
+								<a href="#" class="item_add">Add To Cart</a>
+								<div class="clearfix"> </div>
+						</div>
+						
+					</div>
+				</div>	
+			<div class="col-md-3 col-md2">
+					<div class="col-md1 simpleCart_shelfItem">
+						<a href="single.html">
+							<img class="img-responsive" src="images/pi4.png" alt="" />
+						<img class="img-responsive" src="images/p3.jpg" alt="" style="width:320px;height:320px"/> 
+						</a>
+						<h3><a href="single.html">Shirt</a></h3>
+						<div class="price">
+								<h5 class="item_price">$300</h5>
+								<a href="#" class="item_add">Add To Cart</a>
+								<div class="clearfix"> </div>
+						</div>
+						
+					</div>
+				</div>	
+			<div class="col-md-3 col-md2">
+					<div class="col-md1 simpleCart_shelfItem">
+						<a href="single.html">
+							<img class="img-responsive" src="images/pi1.png" alt="" />
+						<img class="img-responsive" src="images/p4.jpg" alt="" style="width:320px;height:320px"/> 
+						</a>
+						<h3><a href="single.html">Tops</a></h3>
+						<div class="price">
+								<h5 class="item_price">$300</h5>
+								<a href="#" class="item_add">Add To Cart</a>
+								<div class="clearfix"> </div>
+						</div>
+						
+					</div>
+				</div>	
+			<div class="clearfix"> </div>
+			</div>	
+			<div class="content-top1">
+				<div class="col-md-3 col-md2">
+					<div class="col-md1 simpleCart_shelfItem">
+						<a href="single.html">
+							<img class="img-responsive" src="images/pi3.png" alt="" />
+						</a>
+						<h3><a href="single.html">Shirt</a></h3>
+						<div class="price">
+								<h5 class="item_price">$300</h5>
+								<a href="#" class="item_add">Add To Cart</a>
+								<div class="clearfix"> </div>
+						</div>
+						
+					</div>
+				</div>	
+			<div class="col-md-3 col-md2">
+					<div class="col-md1 simpleCart_shelfItem">
+						<a href="single.html">
+							<img class="img-responsive" src="images/pi5.png" alt="" />
+						</a>
+						<h3><a href="single.html">T-Shirt</a></h3>
+						<div class="price">
+								<h5 class="item_price">$300</h5>
+								<a href="#" class="item_add">Add To Cart</a>
+								<div class="clearfix"> </div>
+						</div>
+						
+					</div>
+				</div>	
+			<div class="col-md-3 col-md2">
+					<div class="col-md1 simpleCart_shelfItem">
+						<a href="single.html">
+							<img class="img-responsive" src="images/pi6.png" alt="" />
+						</a>
+						<h3><a href="single.html">Jeans</a></h3>
+						<div class="price">
+								<h5 class="item_price">$300</h5>
+								<a href="#" class="item_add">Add To Cart</a>
+								<div class="clearfix"> </div>
+						</div>
+						
+					</div>
+				</div>	
+			<div class="col-md-3 col-md2">
+					<div class="col-md1 simpleCart_shelfItem">
+						<a href="single.html">
+							<img class="img-responsive" src="images/pi7.png" alt="" />
+						</a>
+						<h3><a href="single.html">Tops</a></h3>
+						<div class="price">
+								<h5 class="item_price">$300</h5>
+								<a href="#" class="item_add">Add To Cart</a>
+								<div class="clearfix"> </div>
+						</div>
+						
+					</div>
+				</div>	
+			<div class="clearfix"> </div>
+			</div>-->
+			
+		</div>
+	</div>
+</div> 
+<div style="position:relative;left:500px">
+<input name="pre" id="pre" type="button" value="<上一页">
+<input name="next" id="next" type="button" value=">下一页" >
+当前是第<span id="now">？</span>页&nbsp;&nbsp;共<span id="total">?</span>页
+
+<script type="text/javascript">
+   $(document).ready(function(){
+      islogin();
+      getPages(pagecount);
+      anfs(op);
+   });
+
+
+
+      function islogin(){
+        /*  alert("islogin"); */
+         $.post(
+         "islogin.action",
+         {
+         
+         },
+         function(obj){
+           if(obj!=""){
+          /*  alert(obj); */
+             $("#islogin").html(obj+" 已登录");
+           }else{
+           var str="<p class='log'><a href='account.html'  >登陆</a>"
+				+" <span>or</span><a  href='register.html'  >注册</a></p>";
+             $("#islogin").empty();
+             $("#islogin").html(str);
+           }
+         },
+         "text"
+         );
+      }
+      
+      var pagetotalnum=0;//总页数
+      var  pagenum=1;//当前的页数
+      var  pagecount=8;//每页8件
+      //给按钮绑定分页方法
+      function anfs(op){
+      	 
+         selCloth(pagecount,op);
+         scroll(0,700);
+      }
+      //获取第几页的数据
+		function selCloth(pagecount,pagenum) {
+			$.getJSON(
+			 "selClothsByPage.action",
+			{"pagecount":pagecount,
+			 "pagenum":pagenum
+			 },
+			  function(obj){
+				var strv=" <div class='content-top1'>  ";
+					var str="";
+				  for ( var i = 0; i < obj.length; i++) {
+					   str =str+" <div class='col-md-3 col-md2'> "+
+					" <div class='col-md1 simpleCart_shelfItem'> "+
+					   " <a href='single.html?cloid="+obj[i].cloid+"'> "+
+				 " <img class='img-responsive' src='"+obj[i].clopic1+"'  style='width:320px;height:320px'/>  </a>"+
+						" <h3><a href='single.html?cloid="+obj[i].cloid+"'>"+obj[i].cloname+"</a></h3> "+
+						" <div class='price'> "+
+						" <h5 class='item_price'>￥"+obj[i].cloprice+"</h5> "+
+					    " <a href='single.html?cloid="+obj[i].cloid+"' class='item_add'>查看详情</a> <div class='clearfix'> </div>"+
+					    "</div></div></div>";
+					if(i==0){
+					  str=strv+str;;
+					}else if((i+1)%4==0){
+					  str=str+"<div class='clearfix'> </div> </div>	"+strv;
+					}
+				 }if ((obj.length % 4) != 0) {
+					 str = str + "<div class='clearfix'> </div> </div>	";
+				  } else{
+				     str=str+"</div>";
+				  }
+				  $("#now").html(pagenum);
+	              $("#pages").html(str);
+			  });
+		}
+		
+		  //为上一页绑定鼠标单击事件
+       $("#pre").click(function(){
+         if(pagenum==1){
+           return;
+         }else{
+           pagenum--;
+           // $("#pages").empty();
+           // alert(pagenum);
+           selCloth(pagecount,pagenum);
+         }
+      });
+      //为下一页绑定鼠标单击事件
+      $("#next").click(function(){
+        // alert("下一页");
+          if(pagenum==pagetotalnum){
+           return;
+          /*  $("#pages").empty();
+           selCloth(pagecount,pagetotalnum); */
+         }else{
+           pagenum++;
+            $("#pages").empty();
+           selCloth(pagecount,pagenum);
+         } 
+      }); 
+      
+    
+      
+   
+      //获取总的页数并动态生成按钮
+      function getPages(pagecount){
+      var an=0;
+      $.post(
+        "getTotalPages.action",
+        {
+        "pagecount":pagecount
+        },
+        function(obj){
+           an=obj;
+           pagetotalnum=obj;
+           $("#total").html(obj);
+           for(var i=1;i<=obj;i++){
+             str="<input id='a"+i+"' value='"+i+"' "+"type='button' onclick='anfs("+i+")' />";
+            // alert(str);
+             $("#next").before(str);
+           }
+        },
+        "text"
+        ); 
+      }
+</script>
+<br>
+<br>
+<br>
+</div>
+<!--//content-->
+<!--footer-->
+<div class="footer">
+	<div class="footer-bottom">
+				<div class="container">
+					<p style="font-size: 20px;color: #52D0C4;" class="footer-class"></p>
+					<p class="footer-class"></p>
+					<div class="clearfix"></div>
+					<p class="footer-class">
+						Copyright &copy; 2016.Company name All rights reserved. <a
+							target="_blank" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+					</p>
+				</div>
+			</div>
+</div>
+
+<!--//footer-->
+</body>
+</html>
